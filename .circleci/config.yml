@@ -1,12 +1,9 @@
-version: 2.1
-
-orbs:
-  win: circleci/windows@2.2.0
+version: 2
 
 jobs:
   build:
-    executor:
-      name: win/default
-      shell: bash.exe
+    machine:
+      image: windows-server-2019-vs2019:stable
+    resource_class: windows.medium
     steps:
       - run: whoami
